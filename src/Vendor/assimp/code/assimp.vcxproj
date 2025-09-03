@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3DSConverter.cpp" />
+    <ClCompile Include="3DSLoader.cpp" />
+    <ClCompile Include="ACLoader.cpp" />
+    <ClCompile Include="ASELoader.cpp" />
+    <ClCompile Include="ASEParser.cpp" />
+    <ClCompile Include="Assimp.cpp" />
+    <ClCompile Include="AssimpCExport.cpp" />
+    <ClCompile Include="AssimpPCH.cpp" />
+    <ClCompile Include="B3DImporter.cpp" />
+    <ClCompile Include="BaseImporter.cpp" />
+    <ClCompile Include="BaseProcess.cpp" />
+    <ClCompile Include="BlenderDNA.cpp" />
+    <ClCompile Include="BlenderLoader.cpp" />
+    <ClCompile Include="BlenderModifier.cpp" />
+    <ClCompile Include="BlenderScene.cpp" />
+    <ClCompile Include="BVHLoader.cpp" />
+    <ClCompile Include="CalcTangentsProcess.cpp" />
+    <ClCompile Include="COBLoader.cpp" />
+    <ClCompile Include="ColladaExporter.cpp" />
+    <ClCompile Include="ColladaLoader.cpp" />
+    <ClCompile Include="ColladaParser.cpp" />
+    <ClCompile Include="ComputeUVMappingProcess.cpp" />
+    <ClCompile Include="ConvertToLHProcess.cpp" />
+    <ClCompile Include="CSMLoader.cpp" />
+    <ClCompile Include="DeboneProcess.cpp" />
+    <ClCompile Include="DefaultIOStream.cpp" />
+    <ClCompile Include="DefaultIOSystem.cpp" />
+    <ClCompile Include="DefaultLogger.cpp" />
+    <ClCompile Include="DXFLoader.cpp" />
+    <ClCompile Include="Exporter.cpp" />
+    <ClCompile Include="FindDegenerates.cpp" />
+    <ClCompile Include="FindInstancesProcess.cpp" />
+    <ClCompile Include="FindInvalidDataProcess.cpp" />
+    <ClCompile Include="FixNormalsStep.cpp" />
+    <ClCompile Include="GenFaceNormalsProcess.cpp" />
+    <ClCompile Include="GenVertexNormalsProcess.cpp" />
+    <ClCompile Include="HMPLoader.cpp" />
+    <ClCompile Include="IFCCurve.cpp" />
+    <ClCompile Include="IFCGeometry.cpp" />
+    <ClCompile Include="IFCLoader.cpp" />
+    <ClCompile Include="IFCMaterial.cpp" />
+    <ClCompile Include="IFCProfile.cpp" />
+    <ClCompile Include="IFCReaderGen.cpp" />
+    <ClCompile Include="IFCUtil.cpp" />
+    <ClCompile Include="Importer.cpp" />
+    <ClCompile Include="ImporterRegistry.cpp" />
+    <ClCompile Include="ImproveCacheLocality.cpp" />
+    <ClCompile Include="IRRLoader.cpp" />
+    <ClCompile Include="IRRMeshLoader.cpp" />
+    <ClCompile Include="IRRShared.cpp" />
+    <ClCompile Include="JoinVerticesProcess.cpp" />
+    <ClCompile Include="LimitBoneWeightsProcess.cpp" />
+    <ClCompile Include="LWOAnimation.cpp" />
+    <ClCompile Include="LWOBLoader.cpp" />
+    <ClCompile Include="LWOLoader.cpp" />
+    <ClCompile Include="LWOMaterial.cpp" />
+    <ClCompile Include="LWSLoader.cpp" />
+    <ClCompile Include="M3Importer.cpp" />
+    <ClCompile Include="MakeVerboseFormat.cpp" />
+    <ClCompile Include="MaterialSystem.cpp" />
+    <ClCompile Include="MD2Loader.cpp" />
+    <ClCompile Include="MD3Loader.cpp" />
+    <ClCompile Include="MD5Loader.cpp" />
+    <ClCompile Include="MD5Parser.cpp" />
+    <ClCompile Include="MDCLoader.cpp" />
+    <ClCompile Include="MDLLoader.cpp" />
+    <ClCompile Include="MDLMaterialLoader.cpp" />
+    <ClCompile Include="MS3DLoader.cpp" />
+    <ClCompile Include="NDOLoader.cpp" />
+    <ClCompile Include="NFFLoader.cpp" />
+    <ClCompile Include="ObjExporter.cpp" />
+    <ClCompile Include="ObjFileImporter.cpp" />
+    <ClCompile Include="ObjFileMtlImporter.cpp" />
+    <ClCompile Include="ObjFileParser.cpp" />
+    <ClCompile Include="OFFLoader.cpp" />
+    <ClCompile Include="OgreImporter.cpp" />
+    <ClCompile Include="OgreMaterial.cpp" />
+    <ClCompile Include="OgreMesh.cpp" />
+    <ClCompile Include="OgreSkeleton.cpp" />
+    <ClCompile Include="OptimizeGraph.cpp" />
+    <ClCompile Include="OptimizeMeshes.cpp" />
+    <ClCompile Include="PlyExporter.cpp" />
+    <ClCompile Include="PlyLoader.cpp" />
+    <ClCompile Include="PlyParser.cpp" />
+    <ClCompile Include="PostStepRegistry.cpp" />
+    <ClCompile Include="PretransformVertices.cpp" />
+    <ClCompile Include="ProcessHelper.cpp" />
+    <ClCompile Include="Q3BSPFileImporter.cpp" />
+    <ClCompile Include="Q3BSPFileParser.cpp" />
+    <ClCompile Include="Q3BSPZipArchive.cpp" />
+    <ClCompile Include="Q3DLoader.cpp" />
+    <ClCompile Include="RawLoader.cpp" />
+    <ClCompile Include="RemoveComments.cpp" />
+    <ClCompile Include="RemoveRedundantMaterials.cpp" />
+    <ClCompile Include="RemoveVCProcess.cpp" />
+    <ClCompile Include="SceneCombiner.cpp" />
+    <ClCompile Include="ScenePreprocessor.cpp" />
+    <ClCompile Include="SGSpatialSort.cpp" />
+    <ClCompile Include="SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="SMDLoader.cpp" />
+    <ClCompile Include="SortByPTypeProcess.cpp" />
+    <ClCompile Include="SpatialSort.cpp" />
+    <ClCompile Include="SplitByBoneCountProcess.cpp" />
+    <ClCompile Include="SplitLargeMeshes.cpp" />
+    <ClCompile Include="StandardShapes.cpp" />
+    <ClCompile Include="STEPFileReader.cpp" />
+    <ClCompile Include="STLExporter.cpp" />
+    <ClCompile Include="STLLoader.cpp" />
+    <ClCompile Include="Subdivision.cpp" />
+    <ClCompile Include="TargetAnimation.cpp" />
+    <ClCompile Include="TerragenLoader.cpp" />
+    <ClCompile Include="TextureTransform.cpp" />
+    <ClCompile Include="TriangulateProcess.cpp" />
+    <ClCompile Include="UnrealLoader.cpp" />
+    <ClCompile Include="ValidateDataStructure.cpp" />
+    <ClCompile Include="VertexTriangleAdjacency.cpp" />
+    <ClCompile Include="XFileImporter.cpp" />
+    <ClCompile Include="XFileParser.cpp" />
+    <ClCompile Include="XGLLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3DSHelper.h" />
+    <ClInclude Include="3DSLoader.h" />
+    <ClInclude Include="ACLoader.h" />
+    <ClInclude Include="ASELoader.h" />
+    <ClInclude Include="ASEParser.h" />
+    <ClInclude Include="assbin_chunks.h" />
+    <ClInclude Include="AssimpPCH.h" />
+    <ClInclude Include="B3DImporter.h" />
+    <ClInclude Include="BaseImporter.h" />
+    <ClInclude Include="BaseProcess.h" />
+    <ClInclude Include="BlenderDNA.h" />
+    <ClInclude Include="BlenderIntermediate.h" />
+    <ClInclude Include="BlenderLoader.h" />
+    <ClInclude Include="BlenderModifier.h" />
+    <ClInclude Include="BlenderScene.h" />
+    <ClInclude Include="BlenderSceneGen.h" />
+    <ClInclude Include="BlobIOSystem.h" />
+    <ClInclude Include="BVHLoader.h" />
+    <ClInclude Include="ByteSwap.h" />
+    <ClInclude Include="CalcTangentsProcess.h" />
+    <ClInclude Include="CInterfaceIOWrapper.h" />
+    <ClInclude Include="COBLoader.h" />
+    <ClInclude Include="COBScene.h" />
+    <ClInclude Include="ColladaExporter.h" />
+    <ClInclude Include="ColladaHelper.h" />
+    <ClInclude Include="ColladaLoader.h" />
+    <ClInclude Include="ColladaParser.h" />
+    <ClInclude Include="ComputeUVMappingProcess.h" />
+    <ClInclude Include="ConvertToLHProcess.h" />
+    <ClInclude Include="CSMLoader.h" />
+    <ClInclude Include="DeboneProcess.h" />
+    <ClInclude Include="DefaultIOStream.h" />
+    <ClInclude Include="DefaultIOSystem.h" />
+    <ClInclude Include="DefaultProgressHandler.h" />
+    <ClInclude Include="DXFHelper.h" />
+    <ClInclude Include="DXFLoader.h" />
+    <ClInclude Include="Exceptional.h" />
+    <ClInclude Include="fast_atof.h" />
+    <ClInclude Include="FileLogStream.h" />
+    <ClInclude Include="FileSystemFilter.h" />
+    <ClInclude Include="FindDegenerates.h" />
+    <ClInclude Include="FindInstancesProcess.h" />
+    <ClInclude Include="FindInvalidDataProcess.h" />
+    <ClInclude Include="FixNormalsStep.h" />
+    <ClInclude Include="GenericProperty.h" />
+    <ClInclude Include="GenFaceNormalsProcess.h" />
+    <ClInclude Include="GenVertexNormalsProcess.h" />
+    <ClInclude Include="HalfLifeFileData.h" />
+    <ClInclude Include="Hash.h" />
+    <ClInclude Include="HMPFileData.h" />
+    <ClInclude Include="HMPLoader.h" />
+    <ClInclude Include="IFCLoader.h" />
+    <ClInclude Include="IFCReaderGen.h" />
+    <ClInclude Include="IFCUtil.h" />
+    <ClInclude Include="IFF.h" />
+    <ClInclude Include="Importer.h" />
+    <ClInclude Include="ImproveCacheLocality.h" />
+    <ClInclude Include="IRRLoader.h" />
+    <ClInclude Include="IRRMeshLoader.h" />
+    <ClInclude Include="IRRShared.h" />
+    <ClInclude Include="irrXMLWrapper.h" />
+    <ClInclude Include="JoinVerticesProcess.h" />
+    <ClInclude Include="LimitBoneWeightsProcess.h" />
+    <ClInclude Include="LineSplitter.h" />
+    <ClInclude Include="LogAux.h" />
+    <ClInclude Include="LWOAnimation.h" />
+    <ClInclude Include="LWOFileData.h" />
+    <ClInclude Include="LWOLoader.h" />
+    <ClInclude Include="LWSLoader.h" />
+    <ClInclude Include="M3Importer.h" />
+    <ClInclude Include="MakeVerboseFormat.h" />
+    <ClInclude Include="MaterialSystem.h" />
+    <ClInclude Include="MD2FileData.h" />
+    <ClInclude Include="MD2Loader.h" />
+    <ClInclude Include="MD2NormalTable.h" />
+    <ClInclude Include="MD3FileData.h" />
+    <ClInclude Include="MD3Loader.h" />
+    <ClInclude Include="MD4FileData.h" />
+    <ClInclude Include="MD5Loader.h" />
+    <ClInclude Include="MD5Parser.h" />
+    <ClInclude Include="MDCFileData.h" />
+    <ClInclude Include="MDCLoader.h" />
+    <ClInclude Include="MDCNormalTable.h" />
+    <ClInclude Include="MDLDefaultColorMap.h" />
+    <ClInclude Include="MDLFileData.h" />
+    <ClInclude Include="MDLLoader.h" />
+    <ClInclude Include="MemoryIOWrapper.h" />
+    <ClInclude Include="MS3DLoader.h" />
+    <ClInclude Include="NDOLoader.h" />
+    <ClInclude Include="NFFLoader.h" />
+    <ClInclude Include="ObjExporter.h" />
+    <ClInclude Include="ObjFileData.h" />
+    <ClInclude Include="ObjFileImporter.h" />
+    <ClInclude Include="ObjFileMtlImporter.h" />
+    <ClInclude Include="ObjFileParser.h" />
+    <ClInclude Include="ObjTools.h" />
+    <ClInclude Include="OFFLoader.h" />
+    <ClInclude Include="OgreImporter.hpp" />
+    <ClInclude Include="OgreXmlHelper.hpp" />
+    <ClInclude Include="OptimizeGraph.h" />
+    <ClInclude Include="OptimizeMeshes.h" />
+    <ClInclude Include="ParsingUtils.h" />
+    <ClInclude Include="PlyExporter.h" />
+    <ClInclude Include="PlyLoader.h" />
+    <ClInclude Include="PlyParser.h" />
+    <ClInclude Include="PolyTools.h" />
+    <ClInclude Include="PretransformVertices.h" />
+    <ClInclude Include="ProcessHelper.h" />
+    <ClInclude Include="Profiler.h" />
+    <ClInclude Include="pstdint.h" />
+    <ClInclude Include="Q3BSPFileData.h" />
+    <ClInclude Include="Q3BSPFileImporter.h" />
+    <ClInclude Include="Q3BSPFileParser.h" />
+    <ClInclude Include="Q3BSPZipArchive.h" />
+    <ClInclude Include="Q3DLoader.h" />
+    <ClInclude Include="qnan.h" />
+    <ClInclude Include="RawLoader.h" />
+    <ClInclude Include="RemoveComments.h" />
+    <ClInclude Include="RemoveRedundantMaterials.h" />
+    <ClInclude Include="RemoveVCProcess.h" />
+    <ClInclude Include="res\resource.h" />
+    <ClInclude Include="SceneCombiner.h" />
+    <ClInclude Include="ScenePreprocessor.h" />
+    <ClInclude Include="ScenePrivate.h" />
+    <ClInclude Include="SGSpatialSort.h" />
+    <ClInclude Include="SkeletonMeshBuilder.h" />
+    <ClInclude Include="SMDLoader.h" />
+    <ClInclude Include="SmoothingGroups.h" />
+    <ClInclude Include="SortByPTypeProcess.h" />
+    <ClInclude Include="SpatialSort.h" />
+    <ClInclude Include="SplitByBoneCountProcess.h" />
+    <ClInclude Include="SplitLargeMeshes.h" />
+    <ClInclude Include="StandardShapes.h" />
+    <ClInclude Include="StdOStreamLogStream.h" />
+    <ClInclude Include="STEPFile.h" />
+    <ClInclude Include="STEPFileReader.h" />
+    <ClInclude Include="STLExporter.h" />
+    <ClInclude Include="STLLoader.h" />
+    <ClInclude Include="StreamReader.h" />
+    <ClInclude Include="StringComparison.h" />
+    <ClInclude Include="Subdivision.h" />
+    <ClInclude Include="TargetAnimation.h" />
+    <ClInclude Include="TerragenLoader.h" />
+    <ClInclude Include="TextureTransform.h" />
+    <ClInclude Include="TinyFormatter.h" />
+    <ClInclude Include="TriangulateProcess.h" />
+    <ClInclude Include="UnrealLoader.h" />
+    <ClInclude Include="ValidateDataStructure.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="VertexTriangleAdjacency.h" />
+    <ClInclude Include="Win32DebugLogStream.h" />
+    <ClInclude Include="XFileHelper.h" />
+    <ClInclude Include="XFileImporter.h" />
+    <ClInclude Include="XFileParser.h" />
+    <ClInclude Include="XGLLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BlenderDNA.inl" />
+    <None Include="SmoothingGroups.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\assimp.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17E83D5F-D6C3-4309-85A8-B6E58AF71215}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>assimp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
