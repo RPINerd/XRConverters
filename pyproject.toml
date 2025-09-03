@@ -1,0 +1,14 @@
+[project]
+name = "xrconverters"
+version = "0.1.0"
+description = "Archive and possible revival of Blender extraction tools for EgoSoft X-games"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=8.4.1",
+    "rich>=14.1.0",
+]
+
+[project.scripts]
+importxmf = "xrconverters.importxmf:main"
+
