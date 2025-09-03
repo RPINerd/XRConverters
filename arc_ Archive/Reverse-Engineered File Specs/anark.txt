@@ -1,0 +1,363 @@
+Hashing algorithm:
+
+int Hash(const char* psz)
+{
+    int result = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        char c = psz[i];
+        result = result*0x1003F + c;
+        if (!c)
+            break;
+    }
+    return result;
+}
+
+string:
+    int size
+    char data[size]   (zero-terminated in .bgp, not in .bgf)
+
+.bgp (Binary Game Plan):
+    byte endianness = 0
+    int numAssets
+    Asset[numAssets]
+        string type
+        string id
+        string bgfFilePath
+    
+    int numStates
+    State[numStates]
+        string id
+        int numPreludeActions
+        Action[numPreludeActions]
+            string action = preload|show|hide|kill|pause|resume|lockupdate|unlockupdate
+            string assetId
+        int numTransitions
+        Transition[numTransitions]
+            string toStateId
+            string event
+            int numActions
+            Action[numActions]
+        int numPostludeActions
+        Action[numPostludeActions]
+
+BGF Lua registry:
+    1: AnarkBgf* pBgf
+    2: table containing elements: { [i] = { element = userdata(pElement), __scriptIndex = i } }
+    3: AnarkLuaLogger* pLogger
+    4: &AnarkLuaEngine.eventCallbacksList
+    5: &AnarkLuaEngine.changeCallbacksList
+    6: event callback table: { [i] = func }
+
+.bgf (Binary Game Face):
+    header
+        byte endianness = 0
+        byte ignored = 4
+        int headerSize = 0x1A
+        byte magic[8] = "AnarkBGF"
+        int version = 3
+        int ignored = 0
+        short width
+        short height
+        byte fitMode (0: no scaling?, 1: fit to width, 2: fit to width and height)
+        int numSceneItems
+        byte ignored = 0
+    
+    memory section
+        int sectionSize = 0x64
+        int counts[0x13]
+            elements:
+                0: number of small elements
+                1: number of large elements
+                2: number of attributes
+            contracts:
+                3: number of contracts
+                4: number of event names
+            strings:
+                6: number of strings
+            animations:
+                8: number of animations
+                9: number of animation keyframes
+            logic:
+                10: number of logics
+                11: ?
+                12: ?
+            params:
+                13: number of params
+            slides:
+                14: number of slides
+                15: number of slide element refs
+                16: number of slide element attributes
+                17: number of slide element animation refs
+                18: number of paddings: number of elements with an uneven number of animations, not counting the last element
+        int ignored[6]
+    
+    strings section
+        int sectionSize
+        string str[memory.counts[6]]
+    
+    elements section
+        int sectionSize
+        Element[memory.counts[0] + memory.counts[1]]
+            int nameHash     (see "name" attributes in the .dae)
+            int parentIdx    (-1 for root elements)
+            int sceneItemId  (0: no scene item. 1 and above: matches the node with id "AK<sceneItemId>" in the .dae)
+            byte type
+                1: geometry
+                2: camera
+                3: light
+                4: text
+                5: material
+                6: texture
+                7: dummy
+                8: contract
+            byte flags
+                1: initially active
+                4: is large element (can own slides and be animated)
+            
+            if flags & 4:
+                byte ignored = 2
+                int animationTimePeriod (unused)
+            
+            int numAttributes
+            Attribute[numAttributes]
+                int typeAndName
+                int value
+                
+                Bits 0..26 of typeAndName: hash of attribute name. Can be one of these:
+                    _AKIsContract
+                    _AKContractClass
+                    AKCustomObjType
+                    BehaviorScripts   (Attribute value is a script file name (.xpl))
+                    active
+                    ambient.a
+                    ambient.b
+                    ambient.g
+                    ambient.r
+                    backcolor.a
+                    backcolor.b
+                    backcolor.g
+                    backcolor.r
+                    boxheight
+                    boxwidth
+                    brightness
+                    clipfar
+                    clipnear
+                    diffuse.a
+                    diffuse.b
+                    diffuse.g
+                    diffuse.r
+                    emissivepower
+                    endtime
+                    expfade
+                    fogcolor.a
+                    fogcolor.b
+                    fogcolor.g
+                    fogcolor.r
+                    fogenable
+                    fogfar
+                    fognear
+                    font
+                    fov
+                    globalactive
+                    horzalign
+                    horzscroll
+                    layercolor.r
+                    layerheight
+                    layerwidth
+                    leading
+                    lightambient.a
+                    lightambient.b
+                    lightambient.g
+                    lightambient.r
+                    lightdiffuse.a
+                    lightdiffuse.b
+                    lightdiffuse.g
+                    lightdiffuse.r
+                    lightspecular.a
+                    lightspecular.b
+                    lightspecular.g
+                    lightspecular.r
+                    linearfade
+                    mousepicking
+                    name
+                    opacity
+                    orientation
+                    orthographic
+                    outerconeangle
+                    parent
+                    pivot.x
+                    pivot.y
+                    pivot.z
+                    pivotu
+                    pivotv
+                    position.x
+                    position.y
+                    position.z
+                    positionu
+                    positionv
+                    renderbehindcockpit
+                    rendergroupidentifier
+                    renderpriority
+                    renderstyle
+                    rendertarget
+                    rotation.x
+                    rotation.y
+                    rotation.z
+                    rotationorder
+                    rotationuv
+                    scale.x
+                    scale.y
+                    scale.z
+                    scaleu
+                    scalev
+                    size
+                    source
+                    specular.a
+                    specular.b
+                    specular.g
+                    specular.r
+                    specularenable
+                    specularpower
+                    textcolor.a
+                    textcolor.b
+                    textcolor.g
+                    textcolor.r
+                    textstring
+                    texttype
+                    tilingmodehorz
+                    tilingmodevert
+                    timeoffset
+                    tracking
+                    transparent
+                    usebackcolor
+                    vertalign
+                    vertscroll
+                    wordwrap
+                
+                Bits 27..29 of typeAndName: data type of the "value" field
+                    1: int
+                    3: float
+                    4: bool
+                    5: 0-based integer index into strings section
+    
+    contracts section (unused?)
+        int sectionSize
+        Contract[memory.counts[3]]
+            int elementIdx
+            int numEvents
+            int eventNameStringIndices[numEvents]
+    
+    animations section
+        int sectionSize
+        Animation[memory.counts[8]]
+            int elementIdx
+            int attrNameHash (see list of attribute names in elements section)
+            byte bEnabled
+            byte bCanSyncFirstKeyframe
+            short numKeyframes
+            Keyframe[numKeyframes]
+                int   timeOffset
+                float bezierP0
+                float ?spline1 = 0
+                float bezierP1
+                float ?spline2 = 0
+                float bezierP2
+    
+    logic section (never occurs in XR)
+        int sectionSize
+        ...
+    
+    params section
+        int sectionSize
+        Param[memory.counts[13]]
+            int typeHash
+                Hash of one of the following:
+                "float"
+                "float3.x", "float3.y", "float3.z"
+                "long"
+                "color4.r", "color4.g", "color4.b", "color4.a"
+                "bool"
+                "string"
+            int value
+                For float, float3.?, long: a float
+                For color4.?: a float 0-255
+                For bool: 0 or 1
+                For string: a string index
+    
+    slides section
+        int sectionSize
+        Slide[memory.counts[14]]
+            char szName[0x10]
+            int elementIdx
+            byte flags
+                0-1: period factor
+                2: 0 -> initially paused, 1 -> initially playing
+                3: 0 -> time is reset to period after period*periodFactor, 1 -> time is reset to 0 after period
+                4: ?
+            int beginTimeMs
+            int endTimeMs    (endTimeMs - beginTimeMs = animation period)
+            int numElemSettings
+            ElementSetting[numElemSettings]
+                int elementIdx
+                byte bActivate
+                int numAttributeValues
+                AttributeValue[numAttributes]
+                    int typeAndName
+                    int value
+                
+                int numAnimOrLogicRefs
+                AnimOrLogicRef[numAnimOrLogicRefs]
+                    byte bIsLogic = 0
+                    byte bEnable
+                    short animOrLogicIdx
+
+.bsg (Binary Scene Graph):
+    header
+        byte endianness = 0
+        byte ignored = 4
+        short ignored = 0
+        int headerSize = 0x18
+        byte magic[8] = "AnarkBGF"
+        int version = 2
+        int ignored = 2
+        byte ignored[8]
+    
+    memory section
+        int sectionSize = 8
+        int numNodes
+        int numAssets
+    
+    scene graph section
+        int sectionSize
+        GraphNode[memory.numNodes]
+            int parentNodeIdx (index into the GraphNode array; -1 for root nodes)
+            int sceneNodeId (e.g. 130 -> matches node "AK130" in the .dae)
+            byte type
+                1: dummy
+                2: geometry
+                3: camera
+                4: light
+                5: text
+                8: layer
+            byte ignored[3]
+            Vec3D translation (negated Z)
+            Vec3D rotation (euclidian, radians; negated X and Y)
+            Vec3D scale
+            Vec3D rotatePivot (negated Z)
+            Vec3D boundingBoxMinPos
+            Vec3D boundingBoxMaxPos
+            float localOpacity
+            byte layerIdx (0..7)
+            byte rotationMethod = 4
+            byte bInvertY
+            int unused = 0
+            byte bTransparent
+    
+    assets section
+        int sectionSize
+        Asset[memory.numAssets]
+            int sceneNodeId
+            byte type
+                6: material
+                7: texture
