@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{32B87FA1-54CC-4256-9717-691F402D730D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>XRConverters</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XRCONVERTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>StdInc.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;D:\VS2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>D:\VS2010\boost\lib32-msvc-10.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XRCONVERTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>StdInc.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;D:\VS2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>D:\VS2010\boost\lib32-msvc-10.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Color8.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="ComponentPart.h" />
+    <ClInclude Include="ComponentPartLod.h" />
+    <ClInclude Include="DirectX.h" />
+    <ClInclude Include="dll.h" />
+    <ClInclude Include="EmotionFX.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MaterialCollection.h" />
+    <ClInclude Include="MaterialLibrary.h" />
+    <ClInclude Include="Matrix44.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="StdInc.h" />
+    <ClInclude Include="Util\AssimpUtil.h" />
+    <ClInclude Include="Util\BinaryReader.h" />
+    <ClInclude Include="Util\BinaryWriter.h" />
+    <ClInclude Include="Util\DXUtil.h" />
+    <ClInclude Include="Util\PathUtil.h" />
+    <ClInclude Include="Vec2D.h" />
+    <ClInclude Include="Vec3D.h" />
+    <ClInclude Include="Vec4D.h" />
+    <ClInclude Include="Xac\ActorFile.h" />
+    <ClInclude Include="Xac\ActorMaterial.h" />
+    <ClInclude Include="Xac\ActorMaterialLayer.h" />
+    <ClInclude Include="Xac\ActorMesh.h" />
+    <ClInclude Include="Xac\ActorMorphTarget.h" />
+    <ClInclude Include="Xac\ActorNode.h" />
+    <ClInclude Include="Xac\ActorNodeDeformation.h" />
+    <ClInclude Include="Xac\ActorSubMesh.h" />
+    <ClInclude Include="Xac\BoneInfluence.h" />
+    <ClInclude Include="Xac\XacChunkHeader.h" />
+    <ClInclude Include="Xac\XacDeformVec3D16.h" />
+    <ClInclude Include="Xac\XacDeformVec3D8.h" />
+    <ClInclude Include="Xac\XacExporter.h" />
+    <ClInclude Include="Xac\XacHeader.h" />
+    <ClInclude Include="Xac\XacImporter.h" />
+    <ClInclude Include="Xac\XacMaterialDefinitionChunkv2Header.h" />
+    <ClInclude Include="Xac\XacMaterialDefinitionChunkv2Layer.h" />
+    <ClInclude Include="Xac\XacMaterialTotalsChunkv1.h" />
+    <ClInclude Include="Xac\XacMeshChunkv1Header.h" />
+    <ClInclude Include="Xac\XacMeshChunkv1SubMesh.h" />
+    <ClInclude Include="Xac\XacMeshChunkv1VertexElement.h" />
+    <ClInclude Include="Xac\XacMetaDataChunkv2Header.h" />
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1Deformation.h" />
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1MorphTarget.h" />
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1Transformation.h" />
+    <ClInclude Include="Xac\XacNodeHierarchyChunkv1NodeHeader.h" />
+    <ClInclude Include="Xac\XacSkinningChunkv3Influence.h" />
+    <ClInclude Include="Xac\XacSkinningChunkv3Header.h" />
+    <ClInclude Include="Xac\XacSkinningChunkv3InfluenceRange.h" />
+    <ClInclude Include="Xmf\XmfDataBuffer.h" />
+    <ClInclude Include="Xmf\XmfDataBufferDesc.h" />
+    <ClInclude Include="Xmf\XmfExporter.h" />
+    <ClInclude Include="Xmf\XmfHeader.h" />
+    <ClInclude Include="Xmf\XmfImporter.h" />
+    <ClInclude Include="Xmf\XmfMaterial.h" />
+    <ClInclude Include="Xmf\XmfVertexElement.h" />
+    <ClInclude Include="Xmf\XuMeshFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Color8.cpp" />
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="ComponentPart.cpp" />
+    <ClCompile Include="ComponentPartLod.cpp" />
+    <ClCompile Include="dll.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MaterialCollection.cpp" />
+    <ClCompile Include="MaterialLibrary.cpp" />
+    <ClCompile Include="Matrix44.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="StdInc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Util\AssimpUtil.cpp" />
+    <ClCompile Include="Util\BinaryReader.cpp" />
+    <ClCompile Include="Util\BinaryWriter.cpp" />
+    <ClCompile Include="Util\DXUtil.cpp" />
+    <ClCompile Include="Util\PathUtil.cpp" />
+    <ClCompile Include="Vec2D.cpp" />
+    <ClCompile Include="Vec3D.cpp" />
+    <ClCompile Include="Vec4D.cpp" />
+    <ClCompile Include="Xac\ActorFile.cpp" />
+    <ClCompile Include="Xac\ActorMaterial.cpp" />
+    <ClCompile Include="Xac\ActorMaterialLayer.cpp" />
+    <ClCompile Include="Xac\ActorMorphTarget.cpp" />
+    <ClCompile Include="Xac\ActorNode.cpp" />
+    <ClCompile Include="Xac\ActorSubMesh.cpp" />
+    <ClCompile Include="Xac\BoneInfluence.cpp" />
+    <ClCompile Include="Xac\XacChunkHeader.cpp" />
+    <ClCompile Include="Xac\XacDeformVec3D16.cpp" />
+    <ClCompile Include="Xac\XacDeformVec3D8.cpp" />
+    <ClCompile Include="Xac\XacExporter.cpp" />
+    <ClCompile Include="Xac\XacImporter.cpp" />
+    <ClCompile Include="Xac\XacSkinningChunkv3Influence.cpp" />
+    <ClCompile Include="Xac\XacSkinningChunkv3InfluenceRange.cpp" />
+    <ClCompile Include="Xmf\XmfDataBuffer.cpp" />
+    <ClCompile Include="Xmf\XmfExporter.cpp" />
+    <ClCompile Include="Xmf\XmfImporter.cpp" />
+    <ClCompile Include="Xmf\XmfMaterial.cpp" />
+    <ClCompile Include="Xmf\XmfVertexElement.cpp" />
+    <ClCompile Include="Xmf\XuMeshFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vendor\assimp\assimp.vcxproj">
+      <Project>{17e83d5f-d6c3-4309-85a8-b6e58af71215}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\clipper\clipper.vcxproj">
+      <Project>{dadd2a90-0b18-4462-b8d1-e4e29ac8848f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\ConvertUTF\ConvertUTF.vcxproj">
+      <Project>{11acdafd-22d2-4a25-a79d-07a63f077311}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\irrXML\irrXML.vcxproj">
+      <Project>{0ee39cc1-2cdf-4174-bfeb-7d5204ea3907}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\poly2tri\poly2tri.vcxproj">
+      <Project>{f80d0f16-cf6e-4de7-ba3c-34ed08853541}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\pugi\pugi.vcxproj">
+      <Project>{c034f18d-e0ec-4754-af69-00ddcb838b7e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\unzip\unzip.vcxproj">
+      <Project>{62fce6ae-9181-4da9-8aab-1f4f24e6f7d6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\zlib\zlib.vcxproj">
+      <Project>{1ea5b7d2-2062-463b-831b-9374c274b3b6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

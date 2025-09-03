@@ -1,0 +1,6 @@
+LIBRARY XRConverters
+EXPORTS
+	ConvertXmlToDae
+	ConvertDaeToXml
+	ConvertXacToDae
+	ConvertDaeToXac
