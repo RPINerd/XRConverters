@@ -5,6 +5,8 @@ description = "Archive and possible revival of Blender extraction tools for EgoS
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pyassimp>=5.2.5",
+    "pycollada>=0.9.2",
     "pytest>=8.4.1",
     "rich>=14.1.0",
 ]
