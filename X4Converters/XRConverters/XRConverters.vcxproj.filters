@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Xmf">
+      <UniqueIdentifier>{69f4359d-36ad-4da6-821e-68075aac0bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Xmf">
+      <UniqueIdentifier>{65cd3743-7313-4780-b463-09d79c847593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Xac">
+      <UniqueIdentifier>{e33c317b-e5c8-42cb-8f06-d2db84fcea04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Xac">
+      <UniqueIdentifier>{4a132c8a-2dcc-408e-bd53-dee24eceadb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{3b254ea5-7299-4d03-9e3e-a9ac3426ad1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{4b701cd0-4bc8-4c98-a49c-abee08b2ebbe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StdInc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentPart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentPartLod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfDataBuffer.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfDataBufferDesc.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfExporter.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfHeader.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfImporter.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfMaterial.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XmfVertexElement.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xmf\XuMeshFile.h">
+      <Filter>Header Files\Xmf</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacHeader.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Color8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix44.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec4D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMetaDataChunkv2Header.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMaterialTotalsChunkv1.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMaterialDefinitionChunkv2Header.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMaterialDefinitionChunkv2Layer.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMeshChunkv1Header.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMeshChunkv1VertexElement.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMeshChunkv1SubMesh.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacSkinningChunkv3Header.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacSkinningChunkv3Influence.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacSkinningChunkv3InfluenceRange.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1MorphTarget.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1Deformation.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacMorphTargetsChunkv1Transformation.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacDeformVec3D16.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacDeformVec3D8.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacImporter.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorFile.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\PathUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\DXUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacNodeHierarchyChunkv1NodeHeader.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorNode.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacChunkHeader.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\BinaryReader.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\BinaryWriter.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorMaterial.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorMaterialLayer.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorMesh.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorSubMesh.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\BoneInfluence.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="EmotionFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorMorphTarget.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\ActorNodeDeformation.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Xac\XacExporter.h">
+      <Filter>Header Files\Xac</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\AssimpUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdInc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentPartLod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentPart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XmfDataBuffer.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XmfExporter.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XmfImporter.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XmfMaterial.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XmfVertexElement.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Xmf\XuMeshFile.cpp">
+      <Filter>Source Files\Xmf</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Color8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec4D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacImporter.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\PathUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\DXUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorFile.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\BinaryReader.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\BoneInfluence.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix44.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacExporter.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorSubMesh.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorNode.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorMorphTarget.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacChunkHeader.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\BinaryWriter.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorMaterial.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\ActorMaterialLayer.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\AssimpUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacSkinningChunkv3Influence.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacSkinningChunkv3InfluenceRange.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacDeformVec3D16.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+    <ClCompile Include="Xac\XacDeformVec3D8.cpp">
+      <Filter>Source Files\Xac</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
