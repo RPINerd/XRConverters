@@ -45,7 +45,7 @@ void XacImporter::InternReadFile ( const std::string& filePath, aiScene* pScene,
         // Read .xac file
         ActorFile actor;
         actor.Read ( pStream );
-        
+
         // Convert to Assimp data model
         ConversionContext context;
         context.Actor = &actor;
@@ -188,7 +188,7 @@ std::vector < aiNode* > XacImporter::ConvertMesh ( ActorNode* pActorNode, ActorM
 
         int meshId = ConvertSubMesh ( subMeshName, &subMesh, pParentAiNode, context );
         context.SubMeshesByActorNode[pActorNode][vertexOffset] = context.Meshes[meshId];
-        
+
         aiNode* pSubMeshNode = new aiNode ();
         pSubMeshNode->mName = subMeshName;
         pSubMeshNode->mNumMeshes = 1;
@@ -319,7 +319,7 @@ int XacImporter::ConvertSubMesh ( const std::string& subMeshName, ActorSubMesh* 
 
     pAiMesh->mMaterialIndex = pSubMesh->MaterialId;
     ConvertBoneInfluences ( pSubMesh, pAiMesh, pParentAiNode, context );
-    
+
     int meshId = context.Meshes.size ();
     context.Meshes.push_back ( pAiMesh );
     return meshId;
@@ -361,7 +361,7 @@ void XacImporter::ConvertMorphTargets ( ConversionContext& context )
 
                 if ( pDeformedSubMesh->mVertices )
                     pDeformedSubMesh->mVertices[vertexIdx] += deformation.PositionOffsets[i];
-                
+
                 if ( pDeformedSubMesh->mNormals )
                     pDeformedSubMesh->mNormals[vertexIdx] += deformation.NormalOffsets[i];
 

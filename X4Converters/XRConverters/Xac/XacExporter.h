@@ -16,7 +16,7 @@ private:
     {
                                             SubMeshEntry            () {}
                                             SubMeshEntry            ( ActorMesh* pMesh, int subMeshIndex ) : pActorMesh ( pMesh ), SubMeshIndex ( subMeshIndex ) {}
-        
+
         ActorMesh*                          pActorMesh;
         int                                 SubMeshIndex;
     };

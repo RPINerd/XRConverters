@@ -286,7 +286,7 @@ void ActorFile::ReadMeshV1 ( BinaryReader reader, ReadContext& context )
                     reader.Read ( bitangents, meshInfo.NumVertices );
                 else
                     throw std::string ( "Duplicate tangent element list" );
-                
+
                 break;
 
             case EMOFX_DECLUSAGE_TEXCOORD:
@@ -338,7 +338,7 @@ void ActorFile::ReadMeshV1 ( BinaryReader reader, ReadContext& context )
         auto subMeshInfo = reader.Read < XacMeshChunkv1SubMesh > ();
         if ( subMeshInfo.NumVertices <= 0 || vertexOffset + subMeshInfo.NumVertices > meshInfo.NumVertices )
             throw std::string ( "Invalid number of vertices in submesh" );
-        
+
         if ( subMeshInfo.NumIndices <= 0 || indexOffset + subMeshInfo.NumIndices > meshInfo.NumIndices )
             throw std::string ( "Invalid number of indices in submesh" );
 
@@ -557,7 +557,7 @@ void ActorFile::WriteHeader ( BinaryWriter writer )
 void ActorFile::WriteMetaData ( BinaryWriter writer )
 {
     writer.Write ( XacChunkHeader ( EMOFX_CHUNK_XAC_METADATA, 2 ) );
-    
+
     XacMetaDataChunkv2Header chunkHeader;
     chunkHeader.RepositionMask = 1;
     chunkHeader.RepositioningNode = -1;
@@ -590,7 +590,7 @@ void ActorFile::WriteNodeHierarchy ( BinaryWriter writer, WriteContext& context 
         nodeData.ImportanceFactor = 1.0f;
         nodeData.IncludeInBoundsCalc = 1;
         nodeData.Transform = pNode->Transform;
-        
+
         writer.Write ( nodeData );
         writer.Write ( pNode->Name );
     }
@@ -607,7 +607,7 @@ void ActorFile::WriteMaterialTotals ( BinaryWriter writer )
 void ActorFile::WriteMaterialDefinition ( BinaryWriter writer, int materialId )
 {
     writer.Write ( XacChunkHeader ( EMOFX_CHUNK_XAC_MATERIAL_DEFINITION, 2 ) );
- 
+
     ActorMaterial& material = Materials[materialId];
     XacMaterialDefinitionChunkv2Header materialData;
     materialData.AmbientColor = material.AmbientColor;

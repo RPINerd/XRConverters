@@ -30,14 +30,14 @@ void XfmExporter::Export ( const char* pFilePath, Assimp::IOSystem* pIOHandler, 
         }
 
         aiNode* pComponentNode = pScene->mRootNode->mChildren[0];
-    
+
         Component component;
         component.Name = pComponentNode->mName.C_Str ();
         for ( int i = 0; i < pComponentNode->mNumChildren; ++i )
         {
             ConvertPartNode ( component, "", pScene, pComponentNode->mChildren[i] );
         }
-    
+
         component.WriteToFile ( pFilePath, GameBaseFolderPath, pIOHandler );
     }
     catch ( std::string error )
@@ -63,7 +63,7 @@ void XfmExporter::ConvertPartNode ( Component& component, const std::string& par
         pPartNode->mTransformation.b4,
         pPartNode->mTransformation.c4
     );
-    
+
     for ( int i = 0; i < pPartNode->mNumChildren; ++i )
     {
         aiNode* pChildNode = pPartNode->mChildren[i];
@@ -166,7 +166,7 @@ std::shared_ptr<XuMeshFile> XfmExporter::ConvertMeshNode ( const aiScene* pScene
         indexBuffer.Description.ItemSize = sizeof(int);
         indexBuffer.Description.Format = 31;
     }
-    
+
     vertexBuffer.AllocData ();
     indexBuffer.AllocData ();
     byte* pVertex = vertexBuffer.GetData ();
@@ -255,7 +255,7 @@ void XfmExporter::ExtendVertexDeclaration ( aiMesh* pMesh, std::vector<XmfVertex
     std::vector < XmfVertexElement > meshDeclaration;
     if ( pMesh->mVertices )
         meshDeclaration.push_back ( XmfVertexElement ( D3DDECLTYPE_FLOAT3, D3DDECLUSAGE_POSITION ) );
-    
+
     if ( pMesh->mNormals )
         meshDeclaration.push_back ( XmfVertexElement ( D3DDECLTYPE_D3DCOLOR, D3DDECLUSAGE_NORMAL ) );
 
@@ -273,7 +273,7 @@ void XfmExporter::ExtendVertexDeclaration ( aiMesh* pMesh, std::vector<XmfVertex
         if ( pMesh->mColors[i] )
             meshDeclaration.push_back ( XmfVertexElement ( D3DDECLTYPE_D3DCOLOR, D3DDECLUSAGE_COLOR, i ) );
     }
-    
+
     foreach ( XmfVertexElement& meshElem, meshDeclaration )
     {
         bool alreadyExists = false;

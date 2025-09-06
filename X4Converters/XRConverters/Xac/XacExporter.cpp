@@ -101,7 +101,7 @@ std::shared_ptr < ActorNode > XacExporter::ConvertNode ( aiNode* pAiNode, Conver
         // Regular node/bone
         std::shared_ptr < ActorNode > pActorNode = std::make_shared < ActorNode > ();
         pActorNode->Name = pAiNode->mName.C_Str ();
-        
+
         aiVector3D position;
         aiQuaternion rotation;
         aiVector3D scale;
@@ -334,7 +334,7 @@ void XacExporter::ConvertMorphTarget ( ActorNode* pActorNode, aiMesh* pBaseAiMes
     {
         pActorDeformation->VertexIndices.push_back ( vertexOffset + i );
         pActorDeformation->PositionOffsets.push_back ( pMorphTargetAiMesh->mVertices[i] - pBaseAiMesh->mVertices[i] );
-        
+
         if ( pBaseAiMesh->mNormals && pMorphTargetAiMesh->mNormals )
             pActorDeformation->NormalOffsets.push_back ( pMorphTargetAiMesh->mNormals[i] - pBaseAiMesh->mNormals[i] );
         else
