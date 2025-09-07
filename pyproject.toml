@@ -7,10 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "pyassimp>=5.2.5",
     "pycollada>=0.9.2",
+    "pygltflib>=1.16.5",
     "pytest>=8.4.1",
     "rich>=14.1.0",
 ]
-
-[project.scripts]
-importxmf = "xrconverters.importxmf:main"
-
