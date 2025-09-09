@@ -2,6 +2,15 @@
 
 Reverse-engineered by "arc_"
 
+## Data Types
+
+- `vec3d`: float x, float y, float z
+- `vec4d`: float x, float y, float z, float w
+- `quat`: float x, float y, float z, float w
+- `quat16`: int16 x, int16 y, int16 z, int16 w; fX = x / 32767
+- `string`: uint32 len, char[len]
+- `matrix44`: `vec4d` col1, `vec4d` col2, `vec4d` col3, `vec4d` pos
+
 ## XMF
 
 ### XMF Summary
@@ -18,9 +27,14 @@ They are quite close to DirectX. Once decompressed, their content can be directl
 
 ### XMF Overview
 
-Each file consists of a header, a number of buffer descriptions, and an equal number of buffer contents. A buffer can be a vertex buffer (vertex positions/normals/texture coordinates/...) or an index buffer (indices into the vertex buffer which determine the polygons). There can be one vertex buffer that stores all attributes of all vertices, or multiple vertex buffers where each buffer stores one particular attribute for all vertices.
+Each file consists of a header, a number of buffer descriptions, and an equal number of buffer contents.
 
-Collision meshes (*-collision.xmf) must have exactly one vertex attribute, namely D3DDECLUSAGE_POSITION (0) stored as D3DDECLTYPE_FLOAT3 (2). This attribute must be stored in the type/usageIndex/format fields of the DataBufferDesc structure, not in the VertexDeclElement array. Not following this rule causes the game to crash.
+A buffer can be a vertex buffer (vertex positions/normals/texture coordinates/...) or an index buffer (indices into the vertex buffer which determine the polygons).
+
+There can be one vertex buffer that stores all attributes of all vertices, or multiple vertex buffers where each buffer stores one particular attribute for all vertices.
+
+Collision meshes (*-collision.xmf) must have exactly one vertex attribute, namely D3DDECLUSAGE_POSITION (0) stored as D3DDECLTYPE_FLOAT3 (2).
+This attribute must be stored in the type/usageIndex/format fields of the DataBufferDesc structure, not in the VertexDeclElement array. **Not following this rule causes the game to crash!**
 
 ### XMF Specification
 
@@ -105,12 +119,6 @@ for each data buffer:
 ## XAC
 
 ```text
-vec3d = float x, float y, float z
-vec4d = float x, float y, float z, float w
-quat = float x, float y, float z, float w
-string = uint32 len, char[len]
-matrix44 = vec4d col1, vec4d col2, vec4d col3, vec4d pos
-
 file:
     byte magic[4] = 58 41 43 20 ("XAC ")
     byte majorVersion = 1
@@ -295,8 +303,6 @@ chunk C: morph targets (v1)
 ## XPM
 
 ```text
-string = uint32 len, char[len]
-
 file:
     byte magic[4] = 58 50 4D 20 ("XPM ")
     byte majorVersion = 1
@@ -339,10 +345,6 @@ chunk 66: deformation animation (v1)
 ## XSM
 
 ```text
-vec3d = float x, float y, float z
-quat16 = int16 x, int16 y, int16 z, int16 w; fX = x / 32767
-string = uint32 len, char[len]
-
 file:
     byte magic[4] = 58 53 4D 20 ("XSM ")
     byte majorVersion = 1
